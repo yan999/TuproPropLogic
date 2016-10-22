@@ -15,4 +15,6 @@ public class Lexic {
     public boolean isPQRS(char token) {
         return (token == 'p') || (token == 'q') || (token == 'r') || (token == 's');
     }
+    
+    
 }
