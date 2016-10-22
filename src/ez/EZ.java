@@ -30,16 +30,26 @@ public class EZ {
         String lowCaseIn = input.toLowerCase();
 
         char token[];
-        char temp[];
         token = lowCaseIn.toCharArray();
-
-        System.out.println(lowCaseIn);
-        System.out.println("");
-
+        
+        /*
+        Pseudocode dari baris 23-37
+        
+        input : string
+        output("input: ")
+        lowCaseIn := input
+        token : array of char
+        token := lowCaseIn
+        
+        if p then q
+        p or q ( q or s )
+        */
+        
+        System.out.println("Output:");
         for (int i = 0; i < lowCaseIn.length(); i++) {
             //p,q,r,s
             if (token[i] == 'p' || token[i] == 'q' || token[i] == 'r' || token[i] == 's') {
-                if (token[i + 1] == ' ') {
+                if (i==lowCaseIn.length()-1 || token[i + 1] == ' ') {
                     System.out.println(token[i] + "\t" + 1);
                 } else {
                     System.out.println("Error");
@@ -47,7 +57,7 @@ public class EZ {
                 }
             } //not
             else if (token[i] == 'n' && token[i + 1] == 'o' && token[i + 2] == 't') {
-                if (token[i + 3] == ' ') {
+                if (i+2==lowCaseIn.length()-1 || token[i + 3] == ' ') {
                     System.out.println("not\t" + 2);
                     i = i + 2;
                 } else {
@@ -56,17 +66,16 @@ public class EZ {
                 }
             } //and
             else if (token[i] == 'a' && token[i + 1] == 'n' && token[i + 2] == 'd') {
-                if (token[i + 3] == ' ') {
+                if (i+2==lowCaseIn.length()-1 || token[i + 3] == ' ') {
                     System.out.println("and\t" + 3);
                     i = i + 2;
                 } else {
                     System.out.println("Error");
                     break;
                 }
-
             } //or
             else if (token[i] == 'o' && token[i + 1] == 'r') {
-                if (token[i + 2] == ' ') {
+                if (i+1==lowCaseIn.length()-1 || token[i + 2] == ' ') {
                     System.out.println("or\t" + 4);
                     i = i + 1;
                 } else {
@@ -75,7 +84,7 @@ public class EZ {
                 }
             } //xor
             else if (token[i] == 'x' && token[i + 1] == 'o' && token[i + 2] == 'r') {
-                if (token[i + 3] == ' ') {
+                if (i+2==lowCaseIn.length()-1 || token[i + 3] == ' ') {
                     System.out.println("xor\t" + 5);
                     i = i + 2;
                 } else {
@@ -85,14 +94,14 @@ public class EZ {
             } //if, iff
             else if (token[i] == 'i' && token[i + 1] == 'f') {
                 if (token[i + 2] == 'f') {
-                    if (token[i + 3] == ' ') {
+                    if (i+2==lowCaseIn.length()-1 || token[i + 3] == ' ') {
                         System.out.println("iff\t" + 8);
                         i = i + 2;
                     } else {
                         System.out.println("Error");
                         break;
                     }
-                } else if (token[i + 2] == ' ') {
+                } else if (i+1==lowCaseIn.length()-1 || token[i + 2] == ' ') {
                     System.out.println("if\t" + 6);
                     i = i + 1;
                 } else {
@@ -101,7 +110,8 @@ public class EZ {
                 }
             } //then
             else if (token[i] == 't' && token[i + 1] == 'h' && token[i + 2] == 'e' && token[i + 3] == 'n') {
-                if (token[i + 4] == ' ') {
+                if (i+3==lowCaseIn.length()-1 || token[i + 4] == ' ') {
+                    
                     System.out.println("then\t" + 7);
                     i = i + 3;
                 } else {
@@ -110,7 +120,7 @@ public class EZ {
                 }
             } // (
             else if (token[i] == '(') {
-                if (token[i + 1] == ' ') {
+                if (i==lowCaseIn.length()-1 || token[i + 1] == ' ') {
                     System.out.println("(\t" + 9);
                 } else {
                     System.out.println("Error");
@@ -118,13 +128,13 @@ public class EZ {
                 }
             } // )
             else if (token[i] == ')') {
-                if (token[i + 1] == ' ') {
+                if (i==lowCaseIn.length()-1 || token[i + 1] == ' ') {
                     System.out.println(")\t" + 10);
                 } else {
                     System.out.println("Error");
                     break;
                 }
-            } else if (token[i] == ' ') {
+            } else if (i==lowCaseIn.length()-1 || token[i] == ' ') {
                 //continue
             }
         }
