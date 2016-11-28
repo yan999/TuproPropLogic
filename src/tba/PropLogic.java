@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author TELC
+ * @author HES
  * 
 IF-38-05
 Kelompok 1
